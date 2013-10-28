@@ -19,16 +19,14 @@ public class WorkoutHandler implements TableHandler {
 	// Contacts Table Columns names
 	public static final String KEY_ID = "id";
 	public static final String KEY_NAME = "name";
-	public static final String FOREIGN_KEY_PROFILE = "profileid";
 
-	public static final String[] COLUMN_NAMES = new String[]{KEY_ID,KEY_NAME,FOREIGN_KEY_PROFILE};
+	public static final String[] COLUMN_NAMES = new String[]{KEY_ID,KEY_NAME};
 
 	
 	@Override
 	public void createTable(SQLiteDatabase db) {
 		String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_WORKOUTS + "("
-				+ KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-				+ FOREIGN_KEY_PROFILE + " ID" + ")";
+				+ KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"+ ")";
 		db.execSQL(CREATE_CONTACTS_TABLE);
 	}
 
@@ -61,7 +59,6 @@ public class WorkoutHandler implements TableHandler {
 
 		Workout newWorkout = new Workout(cursor.getString(1));
 		newWorkout.setID(Long.parseLong(cursor.getString(0)));
-		newWorkout.setProfileID(Long.parseLong(cursor.getString(2)));
 		cursor.close();
 
 		return newWorkout;
@@ -93,8 +90,7 @@ public class WorkoutHandler implements TableHandler {
 	@Override
 	public TableRecord add(SQLiteDatabase db, TableRecord e) {
 		ContentValues values = new ContentValues();
-		values.put(KEY_NAME, ((Workout) e).getName()); // Contact Name
-		values.put(FOREIGN_KEY_PROFILE, ((Workout) e).getProfileID()); // Contact Phone
+		values.put(KEY_NAME, ((Workout) e).getName());
 
 		// Inserting Row
 		long insertID = db.insert(TABLE_WORKOUTS, null, values);
@@ -112,7 +108,6 @@ public class WorkoutHandler implements TableHandler {
 	public int update(SQLiteDatabase db, TableRecord e) {
 		ContentValues values = new ContentValues();
 		values.put(KEY_NAME, ((Exercise) e).getName());
-		values.put(FOREIGN_KEY_PROFILE, ((Exercise) e).getWorkoutID());
 
 		// updating row
 		return db.update(TABLE_WORKOUTS, values, KEY_ID + " = ?",new String[] { String.valueOf(((Exercise) e).getID()) });
@@ -129,7 +124,6 @@ public class WorkoutHandler implements TableHandler {
 	public TableRecord cursorToRecord(Cursor cursor) {
 		Workout aWorkout = new Workout(cursor.getString(1));
 		aWorkout.setID(Long.parseLong(cursor.getString(0)));
-		((Workout) aWorkout).setProfileID(Long.parseLong(cursor.getString(2)));
 		return aWorkout;
 	}
 
