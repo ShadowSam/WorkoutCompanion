@@ -3,8 +3,6 @@ package com.example.workoutcompanion.db;
 import java.util.List;
 
 import com.example.workoutcompanion.dom.Exercise;
-import com.example.workoutcompanion.dom.Profile;
-import com.example.workoutcompanion.dom.Schedule;
 import com.example.workoutcompanion.dom.TableRecord;
 import com.example.workoutcompanion.dom.Workout;
 
@@ -35,8 +33,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		workouts = new WorkoutHandler();
 		exercises = new ExerciseHandler();
-		profiles = new ProfileHandler();
-		schedules = new ScheduleHandler();
     }
 	
 	 // Creating Tables
@@ -63,14 +59,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	
 	public void addExercise(Exercise newExercise) {
 		exercises.add(getWritableDatabase(),newExercise);
-	}
-	
-	public void addprofile(Profile newProfile) {
-		profiles.add(getWritableDatabase(),newProfile);
-	}
-	
-	public void addSchedule(Schedule newSchedule) {
-		schedules.add(getWritableDatabase(),newSchedule);
 	}
 	
 	public TableRecord getWorkout(int id) {
@@ -113,28 +101,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		return exercises.update(getWritableDatabase(),aExercise);
 	}
 	
-	public int updateProfile(Profile aProfile) {
-		return profiles.update(getWritableDatabase(),aProfile);
-	}
-	
-	public int updateSchedule(Schedule aSchedule) {
-		return schedules.update(getWritableDatabase(),aSchedule);
-	}
-	
 	public void deleteWorkout(Workout aWorkout) {
 		workouts.remove(getWritableDatabase(),aWorkout);
 	}
 	
 	public void deleteExercise(Exercise aExercise) {
 		exercises.remove(getWritableDatabase(),aExercise);
-	}
-	
-	public void deleteProfile(Profile aProfile) {
-		profiles.remove(getWritableDatabase(),aProfile);
-	}
-	
-	public void deleteSchedule(Schedule aSchedule) {
-		schedules.remove(getWritableDatabase(),aSchedule);
 	}
 	
 	public int getWorkoutCount() {
