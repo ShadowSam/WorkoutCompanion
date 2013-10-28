@@ -25,14 +25,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
  
     // Database Name
     private static final String DATABASE_NAME = "fitnessManager";
- 
-    // Contacts table name
-    private static final String TABLE_CONTACTS = "contacts";
- 
-    // Contacts Table Columns names
-    private static final String KEY_ID = "id";
-    private static final String KEY_NAME = "name";
-    private static final String KEY_PH_NO = "phone_number";
 	
 	private TableHandler workouts;
 	private TableHandler exercises;

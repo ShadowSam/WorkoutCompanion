@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.workoutcompanion.dom.TableRecord;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class ScheduleHandler implements TableHandler {
@@ -33,7 +34,8 @@ public class ScheduleHandler implements TableHandler {
 	}
 
 	@Override
-	public void add(SQLiteDatabase db, TableRecord e) {
+	public TableRecord add(SQLiteDatabase db, TableRecord e) {
+		return e;
 		// TODO Auto-generated method stub
 
 	}
@@ -54,6 +56,12 @@ public class ScheduleHandler implements TableHandler {
 	public int entityCount(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public TableRecord cursorToRecord(Cursor cursor) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
