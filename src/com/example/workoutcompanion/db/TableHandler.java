@@ -16,7 +16,7 @@ import android.database.sqlite.SQLiteDatabase;
 public interface TableHandler {
 	public void createTable(SQLiteDatabase db);
 	public void upgradeTable(SQLiteDatabase db);
-	public TableRecord find(SQLiteDatabase db,int id);
+	public TableRecord find(SQLiteDatabase db,long id);
 	public List<TableRecord> findAll(SQLiteDatabase db);
 	public TableRecord add(SQLiteDatabase db,TableRecord e);
 	public int update(SQLiteDatabase db,TableRecord e);

@@ -23,7 +23,6 @@ public class ExerciseHandler implements TableHandler {
 
 	@Override
 	public void createTable(SQLiteDatabase db) {
-		// TO DO
 		String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_EXERCISES + "("
 				+ KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
 				+ FOREIGN_KEY_WORKOUT + " ID" + ")";
@@ -39,7 +38,7 @@ public class ExerciseHandler implements TableHandler {
 	}
 
 	@Override
-	public TableRecord find(SQLiteDatabase db, int id) {
+	public TableRecord find(SQLiteDatabase db, long id) {
 		Cursor cursor = db.query(TABLE_EXERCISES, COLUMN_NAMES, KEY_ID + "=?",
 				new String[] { String.valueOf(id) }, null, null, null, null);
 

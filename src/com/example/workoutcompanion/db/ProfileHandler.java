@@ -22,7 +22,7 @@ public class ProfileHandler implements TableHandler {
 	}
 
 	@Override
-	public TableRecord find(SQLiteDatabase db, int id) {
+	public TableRecord find(SQLiteDatabase db, long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

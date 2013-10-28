@@ -13,11 +13,11 @@ public class Workout extends WorkoutComponent {
 		setM_oExcercises(new ArrayList<Exercise>());
 	}
 
-	public Long getM_nProfileID() {
+	public Long getProfileID() {
 		return m_nProfileID;
 	}
 
-	public void setM_nProfileID(Long m_nProfileID) {
+	public void setProfileID(Long m_nProfileID) {
 		this.m_nProfileID = m_nProfileID;
 	}
 
