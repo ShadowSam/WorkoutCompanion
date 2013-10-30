@@ -6,7 +6,5 @@ package com.example.workoutcompanion.controller;
 
 public interface Command 
 {
-	public Boolean Create();
-	public Boolean Edit();
-	public Boolean Delete();
+	public void execute();
 }
