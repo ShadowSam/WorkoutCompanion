@@ -1,8 +1,5 @@
 package com.example.workoutcompanion.controller;
 
-import Command;
-import Receiver;
-
 public class EditWorkoutCommand implements Command
 {
 	Receiver receiver;
