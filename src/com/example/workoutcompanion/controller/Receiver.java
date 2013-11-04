@@ -29,6 +29,7 @@ public class Receiver {
 	
 	public boolean EditProfile() {
 		return true;
+
 	}
 	
 }

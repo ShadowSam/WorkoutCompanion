@@ -1,5 +1,6 @@
 package com.example.workoutcompanion.controller;
 
+
 public class CreateWorkoutCommand implements Command
 {
 	Receiver receiver;
@@ -11,6 +12,6 @@ public class CreateWorkoutCommand implements Command
 
 	public void execute()
 	{
-		receiver.CreateWorkout();
+		receiver.CreateWorkout("");
 	}
 }
