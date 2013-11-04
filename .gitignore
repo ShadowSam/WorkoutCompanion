@@ -27,3 +27,6 @@ proguard/
 *.ipr
 *.iws
 .idea/
+
+# Settings file (maybe from eclipse?)
+.settings/

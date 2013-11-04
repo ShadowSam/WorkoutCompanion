@@ -8,30 +8,68 @@ public class Receiver {
 
 	private DatabaseHandler DBH;
 	
+	private Workout buildWorkout(String wN) {
+		return new Workout(wN);
+	}
+	private Exercise buildExercise(String eN) {
+		return new Exercise(eN);
+	}
+	
+	/**
+	 * 
+	 * @param context
+	 */
 	public Receiver(Context context) {
 		DBH = new DatabaseHandler(context);
 	}
 	
+	/**
+	 * 
+	 * @param workoutName
+	 * @return
+	 */
 	public boolean CreateWorkout(String workoutName) {
-		Workout newWorkout = new Workout(workoutName);
-		DBH.addWorkout(newWorkout);
+		DBH.addWorkout(buildWorkout(workoutName));
+		// there will ofc be logic in here to determine pass/fail
+		// some error catching and whatever
+		// same with succeeding functions
 		return true;
 	}
 	
-	public boolean EditWorkout() {
+	/**
+	 * 
+	 * @param workoutName
+	 * @return
+	 */
+	public boolean EditWorkout(String workoutName) {
+		DBH.updateWorkout(buildWorkout(workoutName));
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param exerciseName
+	 * @return
+	 */
 	public boolean CreateExercise(String exerciseName) {
-		Exercise newExercise = new Exercise(exerciseName);
-		DBH.addExercise(newExercise);
+		DBH.addExercise(buildExercise(exerciseName));
 		return true;
 	}
 	
-	public boolean EditExercise() {
+	/**
+	 * 
+	 * @param exerciseName
+	 * @return
+	 */
+	public boolean EditExercise(String exerciseName) {
+		DBH.updateExercise(buildExercise(exerciseName));
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean EditProfile() {
 		return true;
 
