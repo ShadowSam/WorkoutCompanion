@@ -11,6 +11,6 @@ public class CreateExercise implements Command
 
 	public void execute()
 	{
-		receiver.CreateExercise();
+		receiver.CreateExercise("");
 	}
 }

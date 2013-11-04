@@ -1,5 +1,6 @@
 package com.example.workoutcompanion.controller;
 
+
 public class EditProfile implements Command
 {
 	Receiver receiver;

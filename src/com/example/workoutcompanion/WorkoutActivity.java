@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class LoginActivity extends FragmentActivity implements
+public class WorkoutActivity extends FragmentActivity implements
 		ActionBar.TabListener {
 
 	/**
@@ -40,7 +40,7 @@ public class LoginActivity extends FragmentActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
+		setContentView(R.layout.activity_workout);
 
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
@@ -76,6 +76,8 @@ public class LoginActivity extends FragmentActivity implements
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
 					.setTabListener(this));
 		}
+		
+		
 	}
 
 	@Override
@@ -163,12 +165,21 @@ public class LoginActivity extends FragmentActivity implements
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_login_dummy,
+			View rootView;
+			switch (getArguments().getInt(
+					ARG_SECTION_NUMBER)){
+				case 1:
+					rootView = inflater.inflate(R.layout.fragment_login_dummy,
 					container, false);
-			TextView dummyTextView = (TextView) rootView
-					.findViewById(R.id.section_label);
-			dummyTextView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
+					break;
+				default:
+					System.out.println(getArguments().getInt(
+							ARG_SECTION_NUMBER));
+					rootView = inflater.inflate(R.layout.activity_workout, container, false);
+			}
+			
+			
+			
 			return rootView;
 		}
 	}
