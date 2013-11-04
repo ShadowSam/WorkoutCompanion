@@ -130,7 +130,7 @@ public class WorkoutActivity extends FragmentActivity implements
 		@Override
 		public int getCount() {
 			// Show 3 total pages.
-			return 3;
+			return 4;
 		}
 
 		@Override
@@ -169,7 +169,7 @@ public class WorkoutActivity extends FragmentActivity implements
 			switch (getArguments().getInt(
 					ARG_SECTION_NUMBER)){
 				case 1:
-					rootView = inflater.inflate(R.layout.fragment_login_dummy,
+					rootView = inflater.inflate(R.layout.fragment_profile,
 					container, false);
 					break;
 				default:
