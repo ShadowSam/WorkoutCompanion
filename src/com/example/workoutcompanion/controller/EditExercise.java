@@ -12,6 +12,6 @@ public class EditExercise implements Command
 
 	public void execute()
 	{
-		receiver.EditExercise();
+		receiver.EditExercise("test");
 	}
 }
