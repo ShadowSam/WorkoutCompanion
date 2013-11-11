@@ -31,11 +31,12 @@ public class Receiver {
 	 */
 	public boolean CreateWorkout(String workoutName, 
 			ArrayList<String> exercises) {
-		DBH.addWorkout(buildWorkout(workoutName));
+		Workout workout = buildWorkout(workoutName);
+		DBH.addWorkout(workout);
 		for (Object e : exercises.toArray()) {
 			// We know that everything in the Array is a String, so
 			// it is not necessary to check before casting
-			CreateExercise((String)e);
+			CreateExercise((String)e, workout.getID());
 		} // Unsure how to connect Exercises and Workouts -- not impl yet?
 		return true;
 	}
@@ -64,9 +65,11 @@ public class Receiver {
 	 * @param exerciseName
 	 * @return
 	 */
-	public boolean CreateExercise(String exerciseName) {
+	public boolean CreateExercise(String exerciseName, long workoutID) {
 		// If exercise exists in db, return false
-		DBH.addExercise(buildExercise(exerciseName));
+		Exercise exercise = buildExercise(exerciseName);
+		exercise.setWorkoutID(workoutID);
+		DBH.addExercise(exercise);
 		return true;
 	}
 	
