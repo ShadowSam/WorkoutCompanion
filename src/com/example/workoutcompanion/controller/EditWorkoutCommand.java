@@ -12,6 +12,6 @@ public class EditWorkoutCommand implements Command
 
 	public void execute()
 	{
-		receiver.EditWorkout("test");
+		receiver.EditWorkout("test",null,null);
 	}
 }

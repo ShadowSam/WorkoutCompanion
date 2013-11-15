@@ -12,6 +12,6 @@ public class CreateWorkoutCommand implements Command
 
 	public void execute()
 	{
-		receiver.CreateWorkout("");
+		receiver.CreateWorkout("",null);
 	}
 }
