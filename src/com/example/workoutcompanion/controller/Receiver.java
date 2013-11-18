@@ -77,12 +77,10 @@ public class Receiver {
 	 * @param exerciseName
 	 * @return
 	 */
-	public boolean CreateExercise(String exerciseName, String aWorkout) {
+	public boolean CreateExercise(String exerciseName) {
 		// If exercise exists in db, return false
 		Exercise exercise = buildExercise(exerciseName);
 		try {
-			Workout workout = DBH.findWorkout(aWorkout);
-			exercise.getWorkouts().add(workout);
 			DBH.addOrUpdateExercise(exercise);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
