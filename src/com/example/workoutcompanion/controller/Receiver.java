@@ -9,6 +9,14 @@ import com.example.workoutcompanion.dom.*;
 
 public class Receiver {
 
+	/**
+	 * 
+	 * @param context
+	 */
+	public Receiver(Context context) {
+		DBH = new DatabaseHandler(context);
+	}
+	
 	private DatabaseHandler DBH;
 
 	private Workout buildWorkout(String wN) {
@@ -16,14 +24,6 @@ public class Receiver {
 	}
 	private Exercise buildExercise(String eN) {
 		return new Exercise(eN);
-	}
-
-	/**
-	 * 
-	 * @param context
-	 */
-	public Receiver(Context context) {
-		DBH = new DatabaseHandler(context);
 	}
 
 	/**
