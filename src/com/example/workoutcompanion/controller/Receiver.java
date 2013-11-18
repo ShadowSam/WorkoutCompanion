@@ -1,6 +1,8 @@
 package com.example.workoutcompanion.controller;
 
 import android.content.Context;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import com.example.workoutcompanion.db.*;
 import com.example.workoutcompanion.dom.*;
@@ -32,11 +34,16 @@ public class Receiver {
 	public boolean CreateWorkout(String workoutName, 
 			ArrayList<String> exercises) {
 		Workout workout = buildWorkout(workoutName);
-		DBH.addWorkout(workout);
+		try {
+			DBH.addOrUpdateWorkout(workout);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		for (Object e : exercises.toArray()) {
 			// We know that everything in the Array is a String, so
 			// it is not necessary to check before casting
-			CreateExercise((String)e, workout.getID());
+			CreateExercise((String)e, workout.getName());
 		} // Unsure how to connect Exercises and Workouts -- not impl yet?
 		return true;
 	}
@@ -55,8 +62,13 @@ public class Receiver {
 		for (Object e : exToRem.toArray()) {
 			// Remove exercise from workout
 		} // Removing exercises from workouts; exercises exist in DB
-		if (DBH.updateWorkout(buildWorkout(workoutName)) == 0)
-			return false;
+		try {
+			if (DBH.addOrUpdateWorkout(buildWorkout(workoutName)) == null)
+				return false;
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		return true;
 	}
 	
@@ -65,11 +77,17 @@ public class Receiver {
 	 * @param exerciseName
 	 * @return
 	 */
-	public boolean CreateExercise(String exerciseName, long workoutID) {
+	public boolean CreateExercise(String exerciseName, String aWorkout) {
 		// If exercise exists in db, return false
 		Exercise exercise = buildExercise(exerciseName);
-		exercise.setWorkoutID(workoutID);
-		DBH.addExercise(exercise);
+		try {
+			Workout workout = DBH.findWorkout(aWorkout);
+			exercise.getWorkouts().add(workout);
+			DBH.addOrUpdateExercise(exercise);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return true;
 	}
 	
@@ -79,8 +97,13 @@ public class Receiver {
 	 * @return
 	 */
 	public boolean EditExercise(String exerciseName) {
-		if (DBH.updateExercise(buildExercise(exerciseName)) == 0)
-			return false;
+		try {
+			if (DBH.addOrUpdateExercise(buildExercise(exerciseName)) == null)
+				return false;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return true;
 	}
 	

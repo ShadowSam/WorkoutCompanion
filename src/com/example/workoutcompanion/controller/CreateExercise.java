@@ -9,8 +9,11 @@ public class CreateExercise implements Command
 		this.receiver = receiver;
 	}
 
-	public void execute()
+	public void execute(String... names)
 	{
-		receiver.CreateExercise("",1);
+		String exerciseName = names[0];
+		String workoutName = names[1];
+		
+		receiver.CreateExercise(exerciseName,workoutName);
 	}
 }

@@ -1,7 +1,7 @@
 package com.example.workoutcompanion.controller;
 
 
-public class EditWorkoutCommand implements Command
+public abstract class EditWorkoutCommand implements Command
 {
 	Receiver receiver;
 
@@ -10,8 +10,8 @@ public class EditWorkoutCommand implements Command
 		this.receiver = receiver;
 	}
 
-	public void execute()
-	{
-		receiver.EditWorkout("test",null,null);
-	}
+//	public void execute(String... names)
+//	{
+//		receiver.EditWorkout("test",null,null);
+//	}
 }

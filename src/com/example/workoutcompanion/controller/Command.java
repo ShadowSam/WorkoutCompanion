@@ -6,5 +6,5 @@ package com.example.workoutcompanion.controller;
 
 public interface Command 
 {
-	public void execute();
+	public void execute(String... names);
 }
