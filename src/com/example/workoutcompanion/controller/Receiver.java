@@ -31,7 +31,8 @@ public class Receiver {
 	 * @param workoutName
 	 * @return
 	 */
-	public boolean CreateWorkout(String workoutName,ArrayList<String> exercises) {
+	public boolean CreateWorkout(String workoutName, 
+			ArrayList<String> exercises) {
 		Workout workout = buildWorkout(workoutName);
 		try {
 			DBH.addOrUpdateWorkout(workout);
