@@ -43,7 +43,7 @@ public class Receiver {
 		for (Object e : exercises.toArray()) {
 			// We know that everything in the Array is a String, so
 			// it is not necessary to check before casting
-			CreateExercise((String)e, workout.getName());
+			CreateExercise((String)e);
 		} // Unsure how to connect Exercises and Workouts -- not impl yet?
 		return true;
 	}

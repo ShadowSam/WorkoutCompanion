@@ -12,8 +12,7 @@ public class CreateExercise implements Command
 	public void execute(String... names)
 	{
 		String exerciseName = names[0];
-		String workoutName = names[1];
 		
-		receiver.CreateExercise(exerciseName,workoutName);
+		receiver.CreateExercise(exerciseName);
 	}
 }
