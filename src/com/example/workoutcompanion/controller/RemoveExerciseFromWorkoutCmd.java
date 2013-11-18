@@ -3,9 +3,9 @@ package com.example.workoutcompanion.controller;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class RemoveExerciseFromWorkout extends EditWorkoutCommand {
+public class RemoveExerciseFromWorkoutCmd extends EditWorkoutCmd {
 
-	public RemoveExerciseFromWorkout(Receiver receiver) {
+	public RemoveExerciseFromWorkoutCmd(Receiver receiver) {
 		super(receiver);
 	}
 	
