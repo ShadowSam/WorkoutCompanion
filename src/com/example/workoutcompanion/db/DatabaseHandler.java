@@ -1,127 +1,147 @@
 package com.example.workoutcompanion.db;
 
+import java.sql.SQLException;
 import java.util.List;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.example.workoutcompanion.dom.Exercise;
 import com.example.workoutcompanion.dom.TableRecord;
 import com.example.workoutcompanion.dom.Workout;
+import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
+import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.RuntimeExceptionDao;
+import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.table.TableUtils;
 
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+public class DatabaseHandler extends OrmLiteSqliteOpenHelper {
 
-/**
- * This class is the brain behind database access and modifications.
- * 
- * @author Peter-John Rowe
- *
- */
-public class DatabaseHandler extends SQLiteOpenHelper {
-	// All Static variables
-    // Database Version
-    private static final int DATABASE_VERSION = 1;
- 
-    // Database Name
-    private static final String DATABASE_NAME = "fitnessManager";
-	
-	private TableHandler workouts;
-	private TableHandler exercises;
-	private TableHandler profiles;
-	private TableHandler schedules;
-	
-	public DatabaseHandler(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-		workouts = new WorkoutHandler();
-		exercises = new ExerciseHandler();
-    }
-	
-	 // Creating Tables
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        workouts.createTable(db);
-		exercises.createTable(db);
-		profiles.createTable(db);
-		schedules.createTable(db);
-    }
-	
-	 // Upgrading database
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        workouts.upgradeTable(db);
-		exercises.upgradeTable(db);
-		profiles.upgradeTable(db);
-		schedules.upgradeTable(db);
-    }
-	
-	public void addWorkout(Workout newWorkout) {
-		workouts.add(getWritableDatabase(),newWorkout);
+	// name of the database file for your application -- change to something appropriate for your app
+	private static final String DATABASE_NAME = "WorkoutCompanion.db";
+	// any time you make changes to your database objects, you may have to increase the database version
+	private static final int DATABASE_VERSION = 1;
+
+	// the DAO object we use to access the Exercise table
+	private Dao<Exercise, String> exerciseDao = null;
+	private RuntimeExceptionDao<Exercise, String> exerciseRuntimeDao = null;
+
+	// the DAO object we use to access the Workout table
+	private Dao<Workout, String> workoutDao = null;
+	private RuntimeExceptionDao<Workout, String> workoutRuntimeDao = null;
+
+	public DatabaseHandler(Context aContext) {
+		super(aContext, DATABASE_NAME, null, DATABASE_VERSION, 0x7f040000);
 	}
-	
-	public void addExercise(Exercise newExercise) {
-		exercises.add(getWritableDatabase(),newExercise);
+
+	@Override
+	public void onCreate(SQLiteDatabase arg0, ConnectionSource arg1) {
+		try {
+			//Log.i(DatabaseHelper.class.getName(), "onCreate");
+			TableUtils.createTable(connectionSource, Workout.class);
+			TableUtils.createTable(connectionSource, Exercise.class);
+		} catch (SQLException e) {
+			//Log.e(DatabaseHelper.class.getName(), "Can't create database", e);
+			throw new RuntimeException(e);
+		}
 	}
-	
-	public TableRecord getWorkout(int id) {
-		return workouts.find(getReadableDatabase(),id);
+
+	@Override
+	public void onUpgrade(SQLiteDatabase arg0, ConnectionSource arg1, int arg2,
+			int arg3) {
+		try {
+			//Log.i(DatabaseHelper.class.getName(), "onUpgrade");
+			TableUtils.dropTable(connectionSource, Exercise.class, true);
+			TableUtils.dropTable(connectionSource, Workout.class, true);
+			// after we drop the old databases, we create the new ones
+			onCreate(arg0, connectionSource);
+		} catch (SQLException e) {
+			//Log.e(DatabaseHelper.class.getName(), "Can't drop databases", e);
+			throw new RuntimeException(e);
+		}
 	}
-	
-	public TableRecord getExercise(int id) {
-		return exercises.find(getReadableDatabase(),id);
+
+	/**
+	 * Close the database connections and clear any cached DAOs.
+	 */
+	@Override
+	public void close() {
+		super.close();
+		exerciseRuntimeDao = null;
+		workoutRuntimeDao = null;
 	}
-	
-	public TableRecord getProfile(int id) {
-		return profiles.find(getReadableDatabase(),id);
+
+	private Dao<Exercise, String> getExerciseDao() throws SQLException {
+		if(exerciseDao == null) {
+			exerciseDao = getDao(Exercise.class);
+		}
+		return exerciseDao;
 	}
-	
-	public TableRecord getSchedule(int id) {
-		return schedules.find(getReadableDatabase(),id);
+
+	private RuntimeExceptionDao<Exercise, String> getExerciseRuntimeDao() {
+		if (exerciseRuntimeDao == null) {
+			exerciseRuntimeDao = getRuntimeExceptionDao(Exercise.class);
+		}
+		return exerciseRuntimeDao;
 	}
-	
-	public List<TableRecord> getAllWorkouts() {
-		return workouts.findAll(getWritableDatabase());
+
+	private Dao<Workout, String> getWorkoutDao() throws SQLException {
+		if(workoutDao == null) {
+			workoutDao = getDao(Workout.class);
+		}
+		return workoutDao;
 	}
-	
-	public List<TableRecord> getAllExercises() {
-		return exercises.findAll(getWritableDatabase());
+
+	private RuntimeExceptionDao<Workout, String> getWorkoutRuntimeDao() {
+		if (workoutRuntimeDao == null) {
+			workoutRuntimeDao = getRuntimeExceptionDao(Workout.class);
+		}
+		return workoutRuntimeDao;
 	}
-	
-	public List<TableRecord> getAllProfiles() {
-		return profiles.findAll(getWritableDatabase());
+
+	public Workout findWorkout(String workoutName) throws SQLException {
+		return getWorkoutDao().queryForId(workoutName);
 	}
-	
-	public List<TableRecord> getAllSchedules() {
-		return schedules.findAll(getWritableDatabase());
+
+	public List<Workout> findAllWorkouts() throws SQLException {
+		return getWorkoutDao().queryForAll();
 	}
-	
-	public int updateWorkout(Workout aWorkout) {
-		return workouts.update(getWritableDatabase(),aWorkout);
+
+	public Exercise findExercise(String exerciseName) throws SQLException {
+		return getExerciseDao().queryForId(exerciseName);
 	}
-	
-	public int updateExercise(Exercise aExercise) {
-		return exercises.update(getWritableDatabase(),aExercise);
+
+	public Exercise changeExerciseName(String oldName,String newName) throws SQLException {
+		getExerciseDao().updateId(findExercise(oldName), newName);
+		return findExercise(newName);
+		
 	}
-	
-	public void deleteWorkout(Workout aWorkout) {
-		workouts.remove(getWritableDatabase(),aWorkout);
+
+	public Workout changeWorkoutName(String oldName,String newName) throws SQLException {
+		getWorkoutDao().updateId(findWorkout(oldName), newName);
+		return findWorkout(newName);
 	}
-	
-	public void deleteExercise(Exercise aExercise) {
-		exercises.remove(getWritableDatabase(),aExercise);
+
+	public List<Exercise> findAllExercises() throws SQLException {
+		return getExerciseDao().queryForAll();
 	}
-	
-	public int getWorkoutCount() {
-		return workouts.entityCount(getReadableDatabase());
+
+	public Workout addOrUpdateWorkout(Workout aWorkout) throws SQLException {
+		getWorkoutDao().createOrUpdate(aWorkout);
+		return findWorkout(aWorkout.getName());
 	}
-	
-	public int getExerciseCount() {
-		return exercises.entityCount(getReadableDatabase());
+
+	public Exercise addOrUpdateExercise(Exercise aExercise) throws SQLException {
+		getExerciseDao().createOrUpdate(aExercise);
+		return findExercise(aExercise.getName());
 	}
-	
-	public int getProfileCount() {
-		return profiles.entityCount(getReadableDatabase());
+
+	public void removeWorkout(String name) throws SQLException {
+		getWorkoutDao().deleteById(name);
 	}
-	
-	public int getScheduleCount() {
-		return schedules.entityCount(getReadableDatabase());
+
+	public void removeExercise(String name) throws SQLException {
+		getExerciseDao().deleteById(name);
 	}
+
 }

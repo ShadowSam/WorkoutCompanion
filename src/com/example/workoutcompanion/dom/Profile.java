@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Profile {
 	private String name;
-	private List<WorkoutComponent> workouts;
+	private List<Workout> workouts;
 	
 	public Profile() {
-		setWorkouts(new ArrayList<WorkoutComponent>());
+		setWorkouts(new ArrayList<Workout>());
 	}
 
 	public void addWorkout(Workout workout) {
@@ -27,11 +27,11 @@ public class Profile {
 		this.name = name;
 	}
 
-	public List<WorkoutComponent> getWorkouts() {
+	public List<Workout> getWorkouts() {
 		return workouts;
 	}
 
-	public void setWorkouts(List<WorkoutComponent> workouts) {
+	public void setWorkouts(List<Workout> workouts) {
 		this.workouts = workouts;
 	}
 }

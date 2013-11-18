@@ -10,8 +10,8 @@ public class EditExercise implements Command
 		this.receiver = receiver;
 	}
 
-	public void execute()
+	public void execute(String... name)
 	{
-		receiver.EditExercise("test");
+		receiver.EditExercise(name[0]);
 	}
 }

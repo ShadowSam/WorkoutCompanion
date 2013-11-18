@@ -10,7 +10,7 @@ public class EditProfile implements Command
 		this.receiver = receiver;
 	}
 
-	public void execute()
+	public void execute(String... names)
 	{
 		receiver.EditProfile();
 	}
