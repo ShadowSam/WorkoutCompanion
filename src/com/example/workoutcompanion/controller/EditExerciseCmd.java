@@ -1,11 +1,11 @@
 package com.example.workoutcompanion.controller;
 
 
-public class EditExercise implements Command
+public class EditExerciseCmd implements Command
 {
 	Receiver receiver;
 
-	public EditExercise(Receiver receiver)
+	public EditExerciseCmd(Receiver receiver)
 	{
 		this.receiver = receiver;
 	}

@@ -3,11 +3,11 @@ package com.example.workoutcompanion.controller;
 import java.util.ArrayList;
 
 
-public class CreateWorkoutCommand implements Command
+public class CreateWorkoutCmd implements Command
 {
 	Receiver receiver;
 
-	public CreateWorkoutCommand(Receiver receiver)
+	public CreateWorkoutCmd(Receiver receiver)
 	{
 		this.receiver = receiver;
 	}

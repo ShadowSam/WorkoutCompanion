@@ -8,7 +8,7 @@ public class Controller {
 		Receiver receiver = new Receiver(context);
 		
 		//Create commands
-		Command createExercise = new CreateExercise(receiver);
+		Command createExercise = new CreateExerciseCmd(receiver);
 		// INSERT REST OF COMMANDS HERE
 	}
 	
