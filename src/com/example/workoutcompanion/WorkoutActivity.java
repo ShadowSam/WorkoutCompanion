@@ -16,8 +16,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import com.example.workoutcompanion.ProfileFragment;
 
 public class WorkoutActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -120,10 +123,18 @@ public class WorkoutActivity extends FragmentActivity implements
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a DummySectionFragment (defined as a static inner class
 			// below) with the page number as its lone argument.
-			Fragment fragment = new DummySectionFragment();
-			Bundle args = new Bundle();
-			args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
-			fragment.setArguments(args);
+			Fragment fragment;
+			switch (position){
+				case 0:
+					fragment = new ProfileFragment();
+					break;
+				default:
+					fragment = new DummySectionFragment();
+					Bundle args = new Bundle();
+				args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
+				fragment.setArguments(args);
+			}
+			
 			return fragment;
 		}
 
@@ -166,20 +177,10 @@ public class WorkoutActivity extends FragmentActivity implements
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			View rootView;
-			switch (getArguments().getInt(
-					ARG_SECTION_NUMBER)){
-				case 1:
-					rootView = inflater.inflate(R.layout.fragment_profile,
-					container, false);
-					break;
-				default:
-					System.out.println(getArguments().getInt(
-							ARG_SECTION_NUMBER));
-					rootView = inflater.inflate(R.layout.activity_workout, container, false);
-			}
-			
-			
-			
+		
+			System.out.println(getArguments().getInt(ARG_SECTION_NUMBER));
+			rootView = inflater.inflate(R.layout.activity_workout, container, false);
+
 			return rootView;
 		}
 	}
