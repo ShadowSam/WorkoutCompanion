@@ -10,14 +10,14 @@ import com.example.workoutcompanion.dom.*;
 public class Receiver {
 
 	private DatabaseHandler DBH;
-	
+
 	private Workout buildWorkout(String wN) {
 		return new Workout(wN);
 	}
 	private Exercise buildExercise(String eN) {
 		return new Exercise(eN);
 	}
-	
+
 	/**
 	 * 
 	 * @param context
@@ -25,7 +25,7 @@ public class Receiver {
 	public Receiver(Context context) {
 		DBH = new DatabaseHandler(context);
 	}
-	
+
 	/**
 	 * 
 	 * @param workoutName
@@ -34,19 +34,17 @@ public class Receiver {
 	public boolean CreateWorkout(String workoutName,ArrayList<String> exercises) {
 		Workout workout = buildWorkout(workoutName);
 		try {
+			for(String exerciseName: exercises) {
+				workout.getExercises().add(DBH.findExercise(exerciseName));
+			}
 			DBH.addOrUpdateWorkout(workout);
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		for (Object e : exercises.toArray()) {
-			// We know that everything in the Array is a String, so
-			// it is not necessary to check before casting
-			CreateExercise((String)e);
-		} // Unsure how to connect Exercises and Workouts -- not impl yet?
+		
 		return true;
 	}
-	
+
 	/**
 	 * 
 	 * @param workoutName
@@ -70,7 +68,7 @@ public class Receiver {
 		}
 		return true;
 	}
-	
+
 	/**
 	 * 
 	 * @param exerciseName
@@ -87,7 +85,7 @@ public class Receiver {
 		}
 		return true;
 	}
-	
+
 	/**
 	 * 
 	 * @param exerciseName
@@ -103,7 +101,7 @@ public class Receiver {
 		}
 		return true;
 	}
-	
+
 	/**
 	 * 
 	 * @return
@@ -112,5 +110,5 @@ public class Receiver {
 		return true;
 
 	}
-	
+
 }
