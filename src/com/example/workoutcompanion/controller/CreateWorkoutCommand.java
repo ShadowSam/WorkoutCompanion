@@ -12,6 +12,10 @@ public class CreateWorkoutCommand implements Command
 		this.receiver = receiver;
 	}
 
+	/**
+	 * names[0] - name of the workout
+	 * names[...] - names of workouts
+	 */
 	public void execute(String... names)
 	{
 		String workoutName = names[0];
