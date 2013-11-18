@@ -52,15 +52,19 @@ public class Receiver {
 	 */
 	public boolean EditWorkout(String workoutName,
 			ArrayList<String> exToAdd, ArrayList<String> exToRem) {
+		Workout workout = DBH.findWorkout(workoutName);
+		
 		for (Object e : exToAdd.toArray()) {
+			workout.getExercises().add(DBH.findExercise(e.toString()));
 			// If exercise is not in database, create it
 			// Finally, add exercise to workout
 		} // Adding exercises to workout
 		for (Object e : exToRem.toArray()) {
+			workout.getExercises().remove(DBH.findExercise(e.toString()));
 			// Remove exercise from workout
 		} // Removing exercises from workouts; exercises exist in DB
 		try {
-			if (DBH.addOrUpdateWorkout(buildWorkout(workoutName)) == null)
+			if (DBH.addOrUpdateWorkout(workout) == null)
 				return false;
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
