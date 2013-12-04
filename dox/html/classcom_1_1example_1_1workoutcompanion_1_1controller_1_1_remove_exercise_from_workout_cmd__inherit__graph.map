@@ -1,0 +1,4 @@
+<map id="com.example.workoutcompanion.controller.RemoveExerciseFromWorkoutCmd" name="com.example.workoutcompanion.controller.RemoveExerciseFromWorkoutCmd">
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_edit_workout_cmd.html" title="com.example.workoutcompanion.controller.\lEditWorkoutCmd" alt="" coords="5,97,277,138"/>
+<area shape="rect" id="node3" href="$interfacecom_1_1example_1_1workoutcompanion_1_1controller_1_1_command.html" title="com.example.workoutcompanion.controller.\lCommand" alt="" coords="5,6,277,47"/>
+</map>

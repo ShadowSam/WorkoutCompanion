@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['getcount',['getCount',['../classcom_1_1example_1_1workoutcompanion_1_1_workout_activity_1_1_sections_pager_adapter.html#adb9e4d6bccfae1526f448fb191686e7d',1,'com::example::workoutcompanion::WorkoutActivity::SectionsPagerAdapter']]],
+  ['getexercises',['getExercises',['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_workout.html#ac9c0c14bad6cbd7a6d18c753bddd6c50',1,'com::example::workoutcompanion::dom::Workout']]],
+  ['getid',['getID',['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_table_record.html#aaad8f1c67d8e69fbc651322d5e40a2fc',1,'com::example::workoutcompanion::dom::TableRecord']]],
+  ['getitem',['getItem',['../classcom_1_1example_1_1workoutcompanion_1_1_workout_activity_1_1_sections_pager_adapter.html#a27aea5f4275d4e6a1ee359225ba0580b',1,'com::example::workoutcompanion::WorkoutActivity::SectionsPagerAdapter']]],
+  ['getname',['getName',['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise.html#aa3aa2d96310db78e6c78816929a80a9f',1,'com.example.workoutcompanion.dom.Exercise.getName()'],['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_profile.html#a226ddee02ad02b0dd027f754dede5031',1,'com.example.workoutcompanion.dom.Profile.getName()'],['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_workout.html#adda3e121b7c0ecf1fa80c272dc5218aa',1,'com.example.workoutcompanion.dom.Workout.getName()'],['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_workout_component.html#ac5ed7ef5dca690ce545aaeb06b814161',1,'com.example.workoutcompanion.dom.WorkoutComponent.getName()']]],
+  ['getpagetitle',['getPageTitle',['../classcom_1_1example_1_1workoutcompanion_1_1_workout_activity_1_1_sections_pager_adapter.html#a74752e4b40f9e7b6eaa4e99da794c226',1,'com::example::workoutcompanion::WorkoutActivity::SectionsPagerAdapter']]],
+  ['getworkouts',['getWorkouts',['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise.html#a7094714bc04027326cc8df11f3ca9386',1,'com.example.workoutcompanion.dom.Exercise.getWorkouts()'],['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_profile.html#af184b95d5481b6bc850b602b470a02c1',1,'com.example.workoutcompanion.dom.Profile.getWorkouts()']]]
+];

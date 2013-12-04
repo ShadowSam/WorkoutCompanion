@@ -1,0 +1,9 @@
+<map id="com.example.workoutcompanion.controller.Command" name="com.example.workoutcompanion.controller.Command">
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_create_exercise_cmd.html" title="com.example.workoutcompanion.controller.\lCreateExerciseCmd" alt="" coords="329,5,602,46"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_create_workout_cmd.html" title="com.example.workoutcompanion.controller.\lCreateWorkoutCmd" alt="" coords="329,70,602,111"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_edit_exercise_cmd.html" title="com.example.workoutcompanion.controller.\lEditExerciseCmd" alt="" coords="329,135,602,177"/>
+<area shape="rect" id="node5" href="$classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_edit_profile_cmd.html" title="com.example.workoutcompanion.controller.\lEditProfileCmd" alt="" coords="329,201,602,242"/>
+<area shape="rect" id="node6" href="$classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_edit_workout_cmd.html" title="com.example.workoutcompanion.controller.\lEditWorkoutCmd" alt="" coords="329,266,602,307"/>
+<area shape="rect" id="node7" href="$classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_add_exercise_to_workout_cmd.html" title="com.example.workoutcompanion.controller.\lAddExerciseToWorkoutCmd" alt="" coords="651,233,925,274"/>
+<area shape="rect" id="node8" href="$classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_remove_exercise_from_workout_cmd.html" title="com.example.workoutcompanion.controller.\lRemoveExerciseFromWorkoutCmd" alt="" coords="651,298,925,339"/>
+</map>

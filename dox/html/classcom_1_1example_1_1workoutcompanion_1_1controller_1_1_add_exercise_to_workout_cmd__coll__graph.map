@@ -1,0 +1,5 @@
+<map id="com.example.workoutcompanion.controller.AddExerciseToWorkoutCmd" name="com.example.workoutcompanion.controller.AddExerciseToWorkoutCmd">
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_edit_workout_cmd.html" title="com.example.workoutcompanion.controller.\lEditWorkoutCmd" alt="" coords="379,38,653,79"/>
+<area shape="rect" id="node3" href="$interfacecom_1_1example_1_1workoutcompanion_1_1controller_1_1_command.html" title="com.example.workoutcompanion.controller.\lCommand" alt="" coords="6,5,279,46"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver.html" title="com.example.workoutcompanion.controller.\lReceiver" alt="" coords="6,70,279,111"/>
+</map>

@@ -1,0 +1,169 @@
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler}{\section{com.\-example.\-workoutcompanion.\-db.\-Database\-Handler Class Reference}
+\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler}\index{com.\-example.\-workoutcompanion.\-db.\-Database\-Handler@{com.\-example.\-workoutcompanion.\-db.\-Database\-Handler}}
+}
+
+
+Inheritance diagram for com.\-example.\-workoutcompanion.\-db.\-Database\-Handler\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for com.\-example.\-workoutcompanion.\-db.\-Database\-Handler\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a70557f69e2eed6ec8a586c57ad6c5148}{Database\-Handler} (Context a\-Context)
+\item 
+void \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ae8b1c67a6abc49ee420227fa24d54420}{on\-Create} (S\-Q\-Lite\-Database arg0, Connection\-Source arg1)
+\item 
+void \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ac806115da11f781668b749a3c73e645b}{on\-Upgrade} (S\-Q\-Lite\-Database arg0, Connection\-Source arg1, int arg2, int arg3)
+\item 
+void \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a89c6c6effa783f1873ebbcb9b301c6d8}{close} ()
+\item 
+\hyperlink{classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_workout}{Workout} \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_aad77efaa1ca2fecbac8ef4b0c283fa12}{find\-Workout} (String workout\-Name)  throws S\-Q\-L\-Exception 
+\item 
+List$<$ \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_workout}{Workout} $>$ \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a0375493d23c0dd16988f5b375b87be9b}{find\-All\-Workouts} ()  throws S\-Q\-L\-Exception 
+\item 
+\hyperlink{classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise}{Exercise} \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_af529635c9fad7b21b1f2afb17a0ca17f}{find\-Exercise} (String exercise\-Name)  throws S\-Q\-L\-Exception 
+\item 
+\hyperlink{classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise}{Exercise} \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_aa6f903c2616f7863bdf5199d43d955d3}{change\-Exercise\-Name} (String old\-Name, String new\-Name)  throws S\-Q\-L\-Exception 
+\item 
+\hyperlink{classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_workout}{Workout} \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_acbc08344a1d529bfee3ff7c159126511}{change\-Workout\-Name} (String old\-Name, String new\-Name)  throws S\-Q\-L\-Exception 
+\item 
+List$<$ \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise}{Exercise} $>$ \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ac4159f5b8abd44ac948ef74031a7e7cc}{find\-All\-Exercises} ()  throws S\-Q\-L\-Exception 
+\item 
+\hyperlink{classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_workout}{Workout} \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a7677c50b7f83e38b29c61e4c63a90eef}{add\-Or\-Update\-Workout} (\hyperlink{classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_workout}{Workout} a\-Workout)  throws S\-Q\-L\-Exception 
+\item 
+\hyperlink{classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise}{Exercise} \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ad16c1da657957572cb436dc4b162814b}{add\-Or\-Update\-Exercise} (\hyperlink{classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise}{Exercise} a\-Exercise)  throws S\-Q\-L\-Exception 
+\item 
+void \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a1b6c0537995132d282b71ffabdccb319}{remove\-Workout} (String name)  throws S\-Q\-L\-Exception 
+\item 
+void \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ada07c0d3c047c761fde4e75832f5a6d9}{remove\-Exercise} (String name)  throws S\-Q\-L\-Exception 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a70557f69e2eed6ec8a586c57ad6c5148}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!Database\-Handler@{Database\-Handler}}
+\index{Database\-Handler@{Database\-Handler}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{Database\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-Database\-Handler (
+\begin{DoxyParamCaption}
+\item[{Context}]{a\-Context}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a70557f69e2eed6ec8a586c57ad6c5148}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ad16c1da657957572cb436dc4b162814b}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!add\-Or\-Update\-Exercise@{add\-Or\-Update\-Exercise}}
+\index{add\-Or\-Update\-Exercise@{add\-Or\-Update\-Exercise}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{add\-Or\-Update\-Exercise}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exercise} com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-add\-Or\-Update\-Exercise (
+\begin{DoxyParamCaption}
+\item[{{\bf Exercise}}]{a\-Exercise}
+\end{DoxyParamCaption}
+) throws S\-Q\-L\-Exception}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ad16c1da657957572cb436dc4b162814b}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a7677c50b7f83e38b29c61e4c63a90eef}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!add\-Or\-Update\-Workout@{add\-Or\-Update\-Workout}}
+\index{add\-Or\-Update\-Workout@{add\-Or\-Update\-Workout}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{add\-Or\-Update\-Workout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Workout} com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-add\-Or\-Update\-Workout (
+\begin{DoxyParamCaption}
+\item[{{\bf Workout}}]{a\-Workout}
+\end{DoxyParamCaption}
+) throws S\-Q\-L\-Exception}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a7677c50b7f83e38b29c61e4c63a90eef}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_aa6f903c2616f7863bdf5199d43d955d3}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!change\-Exercise\-Name@{change\-Exercise\-Name}}
+\index{change\-Exercise\-Name@{change\-Exercise\-Name}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{change\-Exercise\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exercise} com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-change\-Exercise\-Name (
+\begin{DoxyParamCaption}
+\item[{String}]{old\-Name, }
+\item[{String}]{new\-Name}
+\end{DoxyParamCaption}
+) throws S\-Q\-L\-Exception}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_aa6f903c2616f7863bdf5199d43d955d3}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_acbc08344a1d529bfee3ff7c159126511}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!change\-Workout\-Name@{change\-Workout\-Name}}
+\index{change\-Workout\-Name@{change\-Workout\-Name}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{change\-Workout\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Workout} com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-change\-Workout\-Name (
+\begin{DoxyParamCaption}
+\item[{String}]{old\-Name, }
+\item[{String}]{new\-Name}
+\end{DoxyParamCaption}
+) throws S\-Q\-L\-Exception}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_acbc08344a1d529bfee3ff7c159126511}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a89c6c6effa783f1873ebbcb9b301c6d8}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!close@{close}}
+\index{close@{close}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a89c6c6effa783f1873ebbcb9b301c6d8}
+Close the database connections and clear any cached D\-A\-Os. \hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ac4159f5b8abd44ac948ef74031a7e7cc}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!find\-All\-Exercises@{find\-All\-Exercises}}
+\index{find\-All\-Exercises@{find\-All\-Exercises}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{find\-All\-Exercises}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Exercise}$>$ com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-find\-All\-Exercises (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws S\-Q\-L\-Exception}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ac4159f5b8abd44ac948ef74031a7e7cc}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a0375493d23c0dd16988f5b375b87be9b}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!find\-All\-Workouts@{find\-All\-Workouts}}
+\index{find\-All\-Workouts@{find\-All\-Workouts}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{find\-All\-Workouts}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Workout}$>$ com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-find\-All\-Workouts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws S\-Q\-L\-Exception}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a0375493d23c0dd16988f5b375b87be9b}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_af529635c9fad7b21b1f2afb17a0ca17f}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!find\-Exercise@{find\-Exercise}}
+\index{find\-Exercise@{find\-Exercise}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{find\-Exercise}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exercise} com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-find\-Exercise (
+\begin{DoxyParamCaption}
+\item[{String}]{exercise\-Name}
+\end{DoxyParamCaption}
+) throws S\-Q\-L\-Exception}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_af529635c9fad7b21b1f2afb17a0ca17f}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_aad77efaa1ca2fecbac8ef4b0c283fa12}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!find\-Workout@{find\-Workout}}
+\index{find\-Workout@{find\-Workout}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{find\-Workout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Workout} com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-find\-Workout (
+\begin{DoxyParamCaption}
+\item[{String}]{workout\-Name}
+\end{DoxyParamCaption}
+) throws S\-Q\-L\-Exception}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_aad77efaa1ca2fecbac8ef4b0c283fa12}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ae8b1c67a6abc49ee420227fa24d54420}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!on\-Create@{on\-Create}}
+\index{on\-Create@{on\-Create}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{on\-Create}]{\setlength{\rightskip}{0pt plus 5cm}void com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-on\-Create (
+\begin{DoxyParamCaption}
+\item[{S\-Q\-Lite\-Database}]{arg0, }
+\item[{Connection\-Source}]{arg1}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ae8b1c67a6abc49ee420227fa24d54420}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ac806115da11f781668b749a3c73e645b}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!on\-Upgrade@{on\-Upgrade}}
+\index{on\-Upgrade@{on\-Upgrade}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{on\-Upgrade}]{\setlength{\rightskip}{0pt plus 5cm}void com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-on\-Upgrade (
+\begin{DoxyParamCaption}
+\item[{S\-Q\-Lite\-Database}]{arg0, }
+\item[{Connection\-Source}]{arg1, }
+\item[{int}]{arg2, }
+\item[{int}]{arg3}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ac806115da11f781668b749a3c73e645b}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ada07c0d3c047c761fde4e75832f5a6d9}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!remove\-Exercise@{remove\-Exercise}}
+\index{remove\-Exercise@{remove\-Exercise}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{remove\-Exercise}]{\setlength{\rightskip}{0pt plus 5cm}void com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-remove\-Exercise (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+) throws S\-Q\-L\-Exception}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_ada07c0d3c047c761fde4e75832f5a6d9}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a1b6c0537995132d282b71ffabdccb319}{\index{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}!remove\-Workout@{remove\-Workout}}
+\index{remove\-Workout@{remove\-Workout}!com::example::workoutcompanion::db::DatabaseHandler@{com\-::example\-::workoutcompanion\-::db\-::\-Database\-Handler}}
+\subsubsection[{remove\-Workout}]{\setlength{\rightskip}{0pt plus 5cm}void com.\-example.\-workoutcompanion.\-db.\-Database\-Handler.\-remove\-Workout (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+) throws S\-Q\-L\-Exception}}\label{classcom_1_1example_1_1workoutcompanion_1_1db_1_1_database_handler_a1b6c0537995132d282b71ffabdccb319}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Desktop/git\-\_\-proj/workout/src/com/example/workoutcompanion/db/\hyperlink{_database_handler_8java}{Database\-Handler.\-java}\end{DoxyCompactItemize}

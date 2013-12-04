@@ -1,0 +1,120 @@
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver}{\section{com.\-example.\-workoutcompanion.\-controller.\-Receiver Class Reference}
+\label{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver}\index{com.\-example.\-workoutcompanion.\-controller.\-Receiver@{com.\-example.\-workoutcompanion.\-controller.\-Receiver}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_acfb96b1541e3ba23321ed2d48cbbead1}{Receiver} (Context context)
+\item 
+boolean \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a4dcbb836cd0af78eb9ff1960b06fffcb}{Create\-Workout} (String workout\-Name, String\mbox{[}$\,$\mbox{]} exercises)
+\item 
+boolean \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a4a001b8158e4f00285c3a1c0302349f5}{Edit\-Workout} (String workout\-Name, String\mbox{[}$\,$\mbox{]} ex\-To\-Add, String\mbox{[}$\,$\mbox{]} ex\-To\-Rem)
+\item 
+boolean \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a96eb1deda2a7bd7278c42df823a520f4}{Create\-Exercise} (String exercise\-Name)
+\item 
+boolean \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_af5807c400c5c805c8807d7bacd138c0b}{Edit\-Exercise} (String exercise\-Name)
+\item 
+boolean \hyperlink{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a8cc04e91e624349f214b4550ab61ce56}{Edit\-Profile} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_acfb96b1541e3ba23321ed2d48cbbead1}{\index{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}!Receiver@{Receiver}}
+\index{Receiver@{Receiver}!com::example::workoutcompanion::controller::Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}}
+\subsubsection[{Receiver}]{\setlength{\rightskip}{0pt plus 5cm}com.\-example.\-workoutcompanion.\-controller.\-Receiver.\-Receiver (
+\begin{DoxyParamCaption}
+\item[{Context}]{context}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_acfb96b1541e3ba23321ed2d48cbbead1}
+Constructor for receiver. Creates Database\-Handler based on supplied context. 
+\begin{DoxyParams}{Parameters}
+{\em context} & Some context \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a96eb1deda2a7bd7278c42df823a520f4}{\index{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}!Create\-Exercise@{Create\-Exercise}}
+\index{Create\-Exercise@{Create\-Exercise}!com::example::workoutcompanion::controller::Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}}
+\subsubsection[{Create\-Exercise}]{\setlength{\rightskip}{0pt plus 5cm}boolean com.\-example.\-workoutcompanion.\-controller.\-Receiver.\-Create\-Exercise (
+\begin{DoxyParamCaption}
+\item[{String}]{exercise\-Name}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a96eb1deda2a7bd7278c42df823a520f4}
+Creates an exercise for the given name. 
+\begin{DoxyParams}{Parameters}
+{\em exercise\-Name} & String Name of the exercise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean success 
+\end{DoxyReturn}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a4dcbb836cd0af78eb9ff1960b06fffcb}{\index{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}!Create\-Workout@{Create\-Workout}}
+\index{Create\-Workout@{Create\-Workout}!com::example::workoutcompanion::controller::Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}}
+\subsubsection[{Create\-Workout}]{\setlength{\rightskip}{0pt plus 5cm}boolean com.\-example.\-workoutcompanion.\-controller.\-Receiver.\-Create\-Workout (
+\begin{DoxyParamCaption}
+\item[{String}]{workout\-Name, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{exercises}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a4dcbb836cd0af78eb9ff1960b06fffcb}
+Creates workout for given string name and array of string exercises. 
+\begin{DoxyParams}{Parameters}
+{\em workout\-Name} & String Name of workout \\
+\hline
+{\em exercises} & String\mbox{[}\mbox{]} Array of exercise names \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean success 
+\end{DoxyReturn}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_af5807c400c5c805c8807d7bacd138c0b}{\index{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}!Edit\-Exercise@{Edit\-Exercise}}
+\index{Edit\-Exercise@{Edit\-Exercise}!com::example::workoutcompanion::controller::Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}}
+\subsubsection[{Edit\-Exercise}]{\setlength{\rightskip}{0pt plus 5cm}boolean com.\-example.\-workoutcompanion.\-controller.\-Receiver.\-Edit\-Exercise (
+\begin{DoxyParamCaption}
+\item[{String}]{exercise\-Name}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_af5807c400c5c805c8807d7bacd138c0b}
+Edits an exercise that is present in the database. 
+\begin{DoxyParams}{Parameters}
+{\em exercise\-Name} & String Name of exercise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean success 
+\end{DoxyReturn}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a8cc04e91e624349f214b4550ab61ce56}{\index{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}!Edit\-Profile@{Edit\-Profile}}
+\index{Edit\-Profile@{Edit\-Profile}!com::example::workoutcompanion::controller::Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}}
+\subsubsection[{Edit\-Profile}]{\setlength{\rightskip}{0pt plus 5cm}boolean com.\-example.\-workoutcompanion.\-controller.\-Receiver.\-Edit\-Profile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a8cc04e91e624349f214b4550ab61ce56}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a4a001b8158e4f00285c3a1c0302349f5}{\index{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}!Edit\-Workout@{Edit\-Workout}}
+\index{Edit\-Workout@{Edit\-Workout}!com::example::workoutcompanion::controller::Receiver@{com\-::example\-::workoutcompanion\-::controller\-::\-Receiver}}
+\subsubsection[{Edit\-Workout}]{\setlength{\rightskip}{0pt plus 5cm}boolean com.\-example.\-workoutcompanion.\-controller.\-Receiver.\-Edit\-Workout (
+\begin{DoxyParamCaption}
+\item[{String}]{workout\-Name, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{ex\-To\-Add, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{ex\-To\-Rem}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver_a4a001b8158e4f00285c3a1c0302349f5}
+Edits the database entry for given workout to hold new exercises 
+\begin{DoxyParams}{Parameters}
+{\em workout\-Name} & String Name of workout to edit \\
+\hline
+{\em ex\-To\-Add} & String\mbox{[}\mbox{]} Names of exercises to add to workout \\
+\hline
+{\em ex\-To\-Rem} & String\mbox{[}\mbox{]} Names of exercises to remove from workout \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean success 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Desktop/git\-\_\-proj/workout/src/com/example/workoutcompanion/controller/\hyperlink{_receiver_8java}{Receiver.\-java}\end{DoxyCompactItemize}

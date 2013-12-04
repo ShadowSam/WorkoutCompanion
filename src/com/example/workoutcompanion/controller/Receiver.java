@@ -66,17 +66,18 @@ public class Receiver {
 		
 		for (String e : exToAdd) {
 			try {
-				workout.getExercises().add(DBH.findExercise(e));
-				// Also a necessity: Adding the workout to the exercise
+				// Attempt to find exercise in DB, then add exercise to workout
+				Exercise exercise;
+				if ((exercise = DBH.findExercise(e)) == null)
+					return false; // doesn't exist
+				workout.getExercises().add(exercise);
+				exercise.getWorkouts().add(workout);
 			} catch (SQLException e1) {
-				// The exercise does not exist in the database, so we may need to
-				// create it.
+				// Database malfunction.
 				e1.printStackTrace();
 				return false; // just do this for now
 			}
-			// If exercise is not in database, create it
-			// Finally, add exercise to workout
-		} // Adding exercises to workout
+		}
 		
 		for (String e : exToRem) {
 			try {

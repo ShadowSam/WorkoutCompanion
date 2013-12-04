@@ -1,6 +1,6 @@
 package com.example.workoutcompanion.controller;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class CreateWorkoutCmd implements Command
@@ -19,11 +19,8 @@ public class CreateWorkoutCmd implements Command
 	public void execute(String... names)
 	{
 		String workoutName = names[0];
-		ArrayList<String> exerciseNames = new ArrayList<String>();
+		String[] exerciseNames = Arrays.copyOfRange(names, 1, names.length);
 		
-		for(int i = 1; i < names.length; i++) {
-			exerciseNames.add(names[i]);
-		}
 		receiver.CreateWorkout(workoutName,exerciseNames);
 	}
 }
