@@ -1,9 +1,13 @@
 package com.example.workoutcompanion;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -18,7 +22,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 import com.example.workoutcompanion.ProfileFragment;
 import com.example.workoutcompanion.dom.Profile;
@@ -43,6 +49,12 @@ public class WorkoutActivity extends FragmentActivity implements
 	
 	public Profile profile;
 
+	List<String> workout = new ArrayList<String>();
+	
+	HashMap<String, List<String>> exercise = new HashMap<String, List<String>>();
+	
+	WorkoutListAdapter listAdapter = new WorkoutListAdapter(this, workout, exercise);
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -50,6 +62,8 @@ public class WorkoutActivity extends FragmentActivity implements
 		System.out.println("--------------------------");
 		this.profile = new Profile();
 		System.out.println(this.profile);
+		
+
 
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
@@ -88,7 +102,9 @@ public class WorkoutActivity extends FragmentActivity implements
 		
 		
 	}
+	
 
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -134,8 +150,6 @@ public class WorkoutActivity extends FragmentActivity implements
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			View rootView;
-		
-			System.out.println(getArguments().getInt(ARG_SECTION_NUMBER));
 			rootView = inflater.inflate(R.layout.activity_workout, container, false);
 
 			return rootView;

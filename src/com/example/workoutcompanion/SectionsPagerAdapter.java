@@ -61,18 +61,18 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 				System.out.println(this.activity.profile);
 				fragment.setArguments(args);
 				break;
+			case 1:
+				fragment = new WorkoutFragment();
+				break;
 			default:
 				fragment = new DummySectionFragment();
-				Bundle args2 = new Bundle();
-				args2.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
-				fragment.setArguments(args2);
+				
 		}
 		
 		return fragment;
 	}
 	
 	public void setEditScreen(){
-		System.out.println(instance);
 		Intent intent = new Intent(this.activity, EditActivity.class);
 	    this.activity.startActivity(intent);
 	    

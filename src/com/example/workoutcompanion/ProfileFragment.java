@@ -10,6 +10,9 @@ package com.example.workoutcompanion;
  * @author Andrew Popovich (ajp7560@rit.edu)
  */
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import com.example.workoutcompanion.dom.Profile;
 
 import android.support.v4.app.Fragment;
@@ -20,6 +23,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 import android.support.v4.app.FragmentActivity;
 
@@ -31,6 +35,7 @@ public class ProfileFragment extends Fragment {
 	private SectionsPagerAdapter adapter;
 	
 	private TextView user;
+
 	
 	private Profile profile;
 	public ProfileFragment(){
@@ -57,6 +62,20 @@ public class ProfileFragment extends Fragment {
 				
 			}
 		});
+		
+		ExpandableListView exp_list = (ExpandableListView) view.findViewById(R.id.workouts);
+		
+		
+		
+		//Example Data
+		
+		WorkoutActivity act = (WorkoutActivity) getActivity();
+
+		
+		
+		
+		exp_list.setAdapter(act.listAdapter);
+		
 		return view;
 	}
 	
@@ -74,12 +93,14 @@ public class ProfileFragment extends Fragment {
 	    }
 		if(name.equals("")){
 			welcome_string = welcome_string.concat(" User!");
-			System.out.println("09");
 		} else {
 			welcome_string = welcome_string.concat(" " + name + "!");
 		}
-		System.out.println(welcome_string);
+		
 		user.setText(welcome_string);
+		WorkoutActivity act = (WorkoutActivity) getActivity();
+		act.listAdapter.notifyDataSetChanged();
+		
 	}
 
 }

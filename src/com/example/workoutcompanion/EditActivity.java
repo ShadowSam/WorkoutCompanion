@@ -41,8 +41,7 @@ public class EditActivity extends Activity {
 		setContentView(R.layout.fragment_edit_profile);
 		
 		name_field = (EditText) this.findViewById(R.id.editText1);
-		
-		
+
 		Button ok = (Button) this.findViewById(R.id.edit_ok);
 		ok.setOnClickListener( new View.OnClickListener() {
 			@Override
