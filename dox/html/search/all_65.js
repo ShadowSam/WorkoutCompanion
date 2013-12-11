@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['editactivity',['EditActivity',['../classcom_1_1example_1_1workoutcompanion_1_1_edit_activity.html',1,'com::example::workoutcompanion']]],
+  ['editactivity_2ejava',['EditActivity.java',['../_edit_activity_8java.html',1,'']]],
   ['editexercise',['EditExercise',['../classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_receiver.html#af5807c400c5c805c8807d7bacd138c0b',1,'com::example::workoutcompanion::controller::Receiver']]],
   ['editexercisecmd',['EditExerciseCmd',['../classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_edit_exercise_cmd.html',1,'com::example::workoutcompanion::controller']]],
   ['editexercisecmd',['EditExerciseCmd',['../classcom_1_1example_1_1workoutcompanion_1_1controller_1_1_edit_exercise_cmd.html#a69ec5e6cb3779e5ca5e99c7926208ee7',1,'com::example::workoutcompanion::controller::EditExerciseCmd']]],
@@ -16,5 +18,6 @@ var searchData=
   ['exercise',['Exercise',['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise.html#a37072c8ae939cf4c97c09a6158eeafa6',1,'com::example::workoutcompanion::dom::Exercise']]],
   ['exercise',['Exercise',['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise.html',1,'com::example::workoutcompanion::dom']]],
   ['exercise_2ejava',['Exercise.java',['../_exercise_8java.html',1,'']]],
-  ['exercise_5fname_5fcolumn_5ffield',['EXERCISE_NAME_COLUMN_FIELD',['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise.html#a1aeb9a6e42c38c3169197b37e8ee79f8',1,'com::example::workoutcompanion::dom::Exercise']]]
+  ['exercise_5fname_5fcolumn_5ffield',['EXERCISE_NAME_COLUMN_FIELD',['../classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_exercise.html#a1aeb9a6e42c38c3169197b37e8ee79f8',1,'com::example::workoutcompanion::dom::Exercise']]],
+  ['exercises',['exercises',['../classcom_1_1example_1_1workoutcompanion_1_1_workout_fragment.html#aae03d3b441ba1116d4af94c814f06f88',1,'com::example::workoutcompanion::WorkoutFragment']]]
 ];

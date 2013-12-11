@@ -1,3 +1,5 @@
 <map id="com.example.workoutcompanion.WorkoutActivity" name="com.example.workoutcompanion.WorkoutActivity">
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1workoutcompanion_1_1_workout_activity_1_1_sections_pager_adapter.html" title="com.example.workoutcompanion.\lWorkoutActivity.SectionsPagerAdapter" alt="" coords="214,158,461,199"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1workoutcompanion_1_1_sections_pager_adapter.html" title="com.example.workoutcompanion.\lSectionsPagerAdapter" alt="" coords="257,107,473,149"/>
+<area shape="rect" id="node7" href="$classcom_1_1example_1_1workoutcompanion_1_1_workout_list_adapter.html" title="com.example.workoutcompanion.\lWorkoutListAdapter" alt="" coords="257,225,473,266"/>
+<area shape="rect" id="node10" href="$classcom_1_1example_1_1workoutcompanion_1_1dom_1_1_profile.html" title="com.example.workoutcompanion.dom.\lProfile" alt="" coords="243,342,488,383"/>
 </map>
