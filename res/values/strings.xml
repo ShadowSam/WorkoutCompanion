@@ -6,11 +6,12 @@
     <string name="title_section1">Profile</string>
     <string name="title_section2">Workouts</string>
     <string name="title_section3">Section 3</string>
-    <string name="welcome">Welcome User! </string>
+    <string name="welcome">Welcome  </string>
 	<string name="workout">Workouts: </string>
 	<string name="login">Login</string>
 	<string name="signup">Signup</string>
 	<string name="edit_profile">Edit Profile</string>
 	<string name="name">Name:</string>
+	<string name="ok">OK</string>
 	
 </resources>

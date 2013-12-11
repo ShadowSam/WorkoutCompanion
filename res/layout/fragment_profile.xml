@@ -11,19 +11,21 @@
     <TextView
         android:id="@+id/section_label"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="#0066FF" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/welcome_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/section_label"
         android:layout_below="@+id/section_label"
         android:text="@string/welcome"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#0066FF" />
 
     <ExpandableListView
-        android:id="@+id/expandableListView1"
+        android:id="@+id/workouts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
@@ -35,18 +37,19 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/welcome_view"
+        android:layout_below="@+id/welcome_view"
         android:layout_marginTop="96dp"
         android:text="@string/workout"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#0066FF" />
 
     <Button
         android:id="@+id/editButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/welcome_view"
+        android:layout_below="@+id/welcome_view"
         android:layout_marginTop="18dp"
         android:text="@string/edit_profile" />
 

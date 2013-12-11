@@ -1,9 +1,13 @@
 package com.example.workoutcompanion;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -18,9 +22,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 import com.example.workoutcompanion.ProfileFragment;
+import com.example.workoutcompanion.dom.Profile;
 
 public class WorkoutActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -39,11 +46,24 @@ public class WorkoutActivity extends FragmentActivity implements
 	 * The {@link ViewPager} that will host the section contents.
 	 */
 	ViewPager mViewPager;
+	
+	public Profile profile;
 
+	List<String> workout = new ArrayList<String>();
+	
+	HashMap<String, List<String>> exercise = new HashMap<String, List<String>>();
+	
+	WorkoutListAdapter listAdapter = new WorkoutListAdapter(this, workout, exercise);
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_workout);
+		System.out.println("--------------------------");
+		this.profile = new Profile();
+		System.out.println(this.profile);
+		
+
 
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
@@ -52,7 +72,7 @@ public class WorkoutActivity extends FragmentActivity implements
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.
 		mSectionsPagerAdapter = new SectionsPagerAdapter(
-				getSupportFragmentManager());
+				getSupportFragmentManager(), this);
 
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -82,7 +102,9 @@ public class WorkoutActivity extends FragmentActivity implements
 		
 		
 	}
+	
 
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -108,56 +130,7 @@ public class WorkoutActivity extends FragmentActivity implements
 			FragmentTransaction fragmentTransaction) {
 	}
 
-	/**
-	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-	 * one of the sections/tabs/pages.
-	 */
-	public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-		public SectionsPagerAdapter(FragmentManager fm) {
-			super(fm);
-		}
-
-		@Override
-		public Fragment getItem(int position) {
-			// getItem is called to instantiate the fragment for the given page.
-			// Return a DummySectionFragment (defined as a static inner class
-			// below) with the page number as its lone argument.
-			Fragment fragment;
-			switch (position){
-				case 0:
-					fragment = new ProfileFragment();
-					break;
-				default:
-					fragment = new DummySectionFragment();
-					Bundle args = new Bundle();
-				args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
-				fragment.setArguments(args);
-			}
-			
-			return fragment;
-		}
-
-		@Override
-		public int getCount() {
-			// Show 3 total pages.
-			return 4;
-		}
-
-		@Override
-		public CharSequence getPageTitle(int position) {
-			Locale l = Locale.getDefault();
-			switch (position) {
-			case 0:
-				return getString(R.string.title_section1).toUpperCase(l);
-			case 1:
-				return getString(R.string.title_section2).toUpperCase(l);
-			case 2:
-				return getString(R.string.title_section3).toUpperCase(l);
-			}
-			return null;
-		}
-	}
 
 	/**
 	 * A dummy fragment representing a section of the app, but that simply
@@ -177,8 +150,6 @@ public class WorkoutActivity extends FragmentActivity implements
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			View rootView;
-		
-			System.out.println(getArguments().getInt(ARG_SECTION_NUMBER));
 			rootView = inflater.inflate(R.layout.activity_workout, container, false);
 
 			return rootView;
